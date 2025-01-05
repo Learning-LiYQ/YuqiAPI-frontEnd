@@ -515,8 +515,12 @@ declare namespace API {
   };
 
   type UserRegisterRequest = {
+    captcha?: string;
     checkPassword?: string;
+    phoneCaptcha?: string;
+    phoneNum?: string;
     userAccount?: string;
+    userName?: string;
     userPassword?: string;
   };
 
