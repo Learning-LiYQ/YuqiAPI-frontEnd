@@ -432,6 +432,11 @@ declare namespace API {
     userId?: number;
   };
 
+  type smsCaptchaUsingGETParams = {
+    /** phoneNum */
+    phoneNum: string;
+  };
+
   type uploadFileUsingPOSTParams = {
     biz?: string;
   };

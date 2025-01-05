@@ -67,6 +67,14 @@ export async function getUserVoByIdUsingGet(
   });
 }
 
+/** getCaptcha GET /api/user/getCaptcha */
+export async function getCaptchaUsingGet(options?: { [key: string]: any }) {
+  return request<any>('/api/user/getCaptcha', {
+    method: 'GET',
+    ...(options || {}),
+  });
+}
+
 /** listUserByPage POST /api/user/list/page */
 export async function listUserByPageUsingPost(
   body: API.UserQueryRequest,
@@ -146,6 +154,21 @@ export async function userRegisterUsingPost(
       'Content-Type': 'application/json',
     },
     data: body,
+    ...(options || {}),
+  });
+}
+
+/** smsCaptcha GET /api/user/smsCaptcha */
+export async function smsCaptchaUsingGet(
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.smsCaptchaUsingGETParams,
+  options?: { [key: string]: any },
+) {
+  return request<API.BaseResponseString_>('/api/user/smsCaptcha', {
+    method: 'GET',
+    params: {
+      ...params,
+    },
     ...(options || {}),
   });
 }
